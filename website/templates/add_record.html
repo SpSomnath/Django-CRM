@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+{%block content%}
+<div class="col-md-6 offset-md-3">
+    {%if user.is_authenticated%}
+    <h1> Add Record</h1>
+    <form method="POST" action="{%url 'home'%}">
+         {% csrf_token%}
+         {{form.as_p}}
+         <button type="submit" class="btn btn-secondary">Submit</button>
+
+
+    </form>
+    {%endif %}
+</div>
+{%endblock%}
